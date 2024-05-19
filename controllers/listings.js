@@ -1,7 +1,7 @@
 const Listing = require("../models/listing.js");
-const {listingSchema,reviewSchema}= require('../schema.js');
-const ExpressError = require('../utils/Expresserror.js');
-const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
+const { listingSchema, reviewSchema } = require("../schema.js");
+const ExpressError = require("../utils/Expresserror.js");
+const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
@@ -127,4 +127,26 @@ module.exports.destroyListing=async (req, res) => {
     console.log(deletedListing);
     req.flash("success","Listing Deleted");
     res.redirect("/listings")
+}
+module.exports.search = async(req,res)=>{
+ console.log(req.query);
+ let title =req.query.title;
+ if(!title){
+    req.flash("error","Please enter something to search");
+    return res.redirect("/listings");
+ }
+ if(title.trim()===""){
+    req.flash("error","Please enter a valid search term");
+    return res.redirect("/listings");
+ }
+ let allListings= await Listing.find({
+    title: { $regex: title, $options: 'i' } // case-insensitive search
+  });
+  if(allListings.length===0){
+    req.flash("error","No listings found");
+    return res.redirect("/listings");
+  }
+  console.log("request received");
+  res.render("listings/index.ejs", { allListings });
+
 }

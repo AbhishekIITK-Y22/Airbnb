@@ -21,7 +21,8 @@ router.route("/")
 //Index Route
 // router.get("/", wrapAsync(listingController.index));
 
-
+//Search Route
+router.get("/search", wrapAsync(listingController.search));
 //New ROute
 router.get("/new",isLoggedIn, listingController.renderNewForm)
 
@@ -60,6 +61,7 @@ router.route("/:id")
 // router.put("/:id",isLoggedIn,isOwner, wrapAsync(listingController.updateListing));
 //Delete Route 
 // router.delete("/:id",isLoggedIn,isOwner, wrapAsync(listingController.destroyListing));
+
 
 
 module.exports =router;

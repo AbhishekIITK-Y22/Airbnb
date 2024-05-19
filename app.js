@@ -49,7 +49,7 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(morgan("dev"));
 app.use(cookieParser("this is my secret key"));
-
+app.set('view cache', false);
 const store =MongoStore.create({
   mongoUrl:MONGO_URL,
   collection:"sessions",

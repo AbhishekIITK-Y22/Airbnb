@@ -1,5 +1,6 @@
 const Listing= require("./models/listing.js");
 const Review= require("./models/review.js");
+const OTP = require("./models/otp.js");
 
 module.exports.isLoggedIn = (req,res,next)=> { 
   if(!req.isAuthenticated()){   
@@ -9,6 +10,32 @@ module.exports.isLoggedIn = (req,res,next)=> {
 }
 next();
 }
+
+module.exports.verifyOtp = async (req, res, next) => {
+    const { otp1, otp2, otp3, otp4, otp5, otp6, email } = req.body;
+    const otp = otp1 + otp2 + otp3 + otp4 + otp5 + otp6;
+
+    try {
+        const databaseOtp = await OTP.findOne({ email });
+
+        if (!databaseOtp) {
+            req.flash("error", "OTP not found.");
+            return res.redirect("/signup");
+        }
+
+        if (otp === databaseOtp.otpCode && databaseOtp.expiresAt > new Date()) {
+            // Proceed to the next middleware or route handler
+            return next();
+        } else {
+            req.flash("error", "Invalid or expired OTP.");
+            return res.redirect("/signup");
+        }
+    } catch (error) {
+        console.error(error);
+        req.flash("error", "An error occurred while verifying OTP.");
+        return res.redirect("/signup");
+    }
+};
 
 
 module.exports.saveRedirectUrl= (req,res,next)=>{

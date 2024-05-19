@@ -7,6 +7,11 @@ const userSchema = new Schema({
         required:true,
         unique:true
     },
+    // contactno:{
+    //     type:Number,
+    //     required:true,
+    //     unique:true
+    // }
 })
 
 //passportLocalMongoose will automatically define username and password to the userSchema. We may or may not write by ourselves 
