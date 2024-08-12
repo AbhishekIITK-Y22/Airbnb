@@ -65,15 +65,15 @@ To start the application, use the following command:
    ```bash
    http://localhost:3000
 
-##Deployment
+## Deployment
 The project is deployed on Render. 
 You can access the live application at [Airbnb Clone](https://airbnb2-4i92.onrender.com/listings).
 
-###Contribution
+### Contribution
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
 
-###Author
+### Author
 
 Abhishek Kumar
 3rd Year Undergraduate Student,
