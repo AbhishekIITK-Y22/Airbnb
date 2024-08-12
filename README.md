@@ -46,7 +46,7 @@ This project is a simplified clone of the Airbnb platform, designed to showcase 
    git clone https://github.com/AbhishekIITK-Y22/Airbnb.git
    cd Airbnb
 
-2. **Set Up Environment Variables**
+2. **Set Up Environment Variables** <br>
 Create a .env file in the root directory of the project and add the following environment variables:
    ```bash
    MONGODB_URI=your_mongodb_uri
@@ -55,18 +55,18 @@ Create a .env file in the root directory of the project and add the following en
    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
    MAPBOX_TOKEN=your_mapbox_token
  
-3. **Run the Application**
+3. **Run the Application** <br>
 To start the application, use the following command:
    ```bash
    npm start
 
-4. **Access the Application**
+4. **Access the Application** <br>
    Once the application is running, you can access it in your web browser at:
    ```bash
    http://localhost:3000
 
-## Deployment
-The project is deployed on Render. 
+## Deployment <br>
+The project is deployed on Render. <br>
 You can access the live application at [Airbnb Clone](https://airbnb2-4i92.onrender.com/listings).
 
 ### Contribution
