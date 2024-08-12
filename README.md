@@ -55,12 +55,12 @@ Create a .env file in the root directory of the project and add the following en
    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
    MAPBOX_TOKEN=your_mapbox_token
  
-3. **Run the Application **
+3. **Run the Application**
 To start the application, use the following command:
    ```bash
    npm start
 
-4. **Access the Application **
+4. **Access the Application**
    Once the application is running, you can access it in your web browser at:
    ```bash
    http://localhost:3000
