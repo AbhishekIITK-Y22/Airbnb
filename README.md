@@ -75,8 +75,9 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 ### Author
 
-Abhishek Kumar
-3rd Year Undergraduate Student,
-Department of Computer Science and Engineering,
+Abhishek Kumar<br>
+3rd Year Undergraduate Student,<br>
+Department of Computer Science and Engineering,<br>
 IIT Kanpur
+
 
